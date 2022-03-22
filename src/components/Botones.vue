@@ -1,5 +1,7 @@
 <template>
     <a class="fcc-btn" href="/NASAcakes/menu.html">Ver Menú</a>
+    <br>
+    <br>
 </template>
 
 <script>

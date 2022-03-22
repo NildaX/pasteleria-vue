@@ -1,9 +1,8 @@
 <template>
   <div class="home">
-    <Header/>
     <div class="fondorosa">
       <Carrusel/>
-      <Botones/>
+      <Menu/>
       <Informacion/>
     </div>
   </div>
@@ -13,7 +12,7 @@
 // @ is an alias to /src
 import Header from "../components/Header.vue";
 import Carrusel from "../components/Carrusel.vue";
-import Botones from "../components/Botones.vue";
+import Menu from "../components/Menu.vue";
 import Informacion from "../components/Informacion.vue";
 
 export default {
@@ -21,7 +20,7 @@ export default {
   components: {
     Header,
     Carrusel,
-    Botones,
+    Menu,
     Informacion,
   }
 }
