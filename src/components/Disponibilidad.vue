@@ -12,23 +12,34 @@
                     <tbody>
                         <tr>
                             <td>Chocolate</td>
-                            <td>5</td>
+                            <td>{{ $store.state.contChocolate }}</td>
+                            <button @click="$store.dispatch('bajarContador','chocolate')">-</button>
+                            <button @click="$store.dispatch('subirContador','chocolate')">+</button>
+
                         </tr>
                         <tr>
                             <td>Fresa</td>
-                            <td>4</td>
+                            <td>{{ $store.state.contFresa }}</td>
+                            <button @click="$store.dispatch('bajarContador','fresa')">-</button>
+                            <button @click="$store.dispatch('subirContador','fresa')">+</button>
                         </tr>
                         <tr>
                             <td>Tres leches</td>
-                            <td>3</td>
+                            <td>{{ $store.state.contLeches }}</td>
+                            <button @click="$store.dispatch('bajarContador','leches')">-</button>
+                            <button @click="$store.dispatch('subirContador','leches')">+</button>
                         </tr>
                         <tr>
                             <td>Platano</td>
-                            <td>2</td>
+                            <td>{{ $store.state.contPlatano }}</td>
+                            <button @click="$store.dispatch('bajarContador','platano')">-</button>
+                            <button @click="$store.dispatch('subirContador','platano')">+</button>
                         </tr>
                         <tr>
                             <td>Chessecake</td>
-                            <td>1</td>
+                            <td>{{ $store.state.contChessecake }}</td>
+                            <button @click="$store.dispatch('bajarContador','chessecake')">-</button>
+                            <button @click="$store.dispatch('subirContador','chessecake')">+</button>
                         </tr>
                     </tbody>
                 </table>
@@ -45,23 +56,33 @@
                     <tbody>
                         <tr>
                             <td>Galletas</td>
-                            <td>1</td>
+                            <td>{{ $store.state.contGalletas }}</td>
+                            <button @click="$store.dispatch('bajarContador','galletas')">-</button>
+                            <button @click="$store.dispatch('subirContador','galletas')">+</button>
                         </tr>
                         <tr>
                             <td>Gomitas</td>
-                            <td>2</td>
+                            <td>{{ $store.state.contGomitas }}</td>
+                            <button @click="$store.dispatch('bajarContador','gomitas')">-</button>
+                            <button @click="$store.dispatch('subirContador','gomitas')">+</button>
                         </tr>
                         <tr>
                             <td>Gelatina</td>
-                            <td>3</td>
+                            <td>{{ $store.state.contGelatina }}</td>
+                            <button @click="$store.dispatch('bajarContador','gelatina')">-</button>
+                            <button @click="$store.dispatch('subirContador','gelatina')">+</button>
                         </tr>
                         <tr>
                             <td>Frutos rojos</td>
-                            <td>4</td>
+                            <td>{{ $store.state.contFrutos }}</td>
+                            <button @click="$store.dispatch('bajarContador','frutos')">-</button>
+                            <button @click="$store.dispatch('subirContador','frutos')">+</button>
                         </tr>
                         <tr>
                             <td>Chocolate</td>
-                            <td>5</td>
+                            <td>{{ $store.state.contAChocolate}}</td>
+                            <button @click="$store.dispatch('bajarContador','achocolate')">-</button>
+                            <button @click="$store.dispatch('subirContador','achocolate')">+</button>
                         </tr>
                     </tbody>
                 </table>
