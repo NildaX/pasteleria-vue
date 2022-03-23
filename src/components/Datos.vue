@@ -1,16 +1,106 @@
 <template>
+    <label for="sabor1">Realizar pedido</label>
+    <br>
+    <label for="sabor1">Sabor del pastel:</label>
+    <div class="row">
+        <div class="col-6">
+            <input type="checkbox"  v-model="Chocolate" value="sabor1">
+        </div>
+        <div class="col-6">
+            <label for="sabor1"> Chocolate</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <input type="checkbox"  v-model="Fresa" value="sabor2">
+        </div>
+        <div class="col-6">
+            <label for="sabor1"> Fresa</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <input type="checkbox"  v-model="Naranja" value="sabor3">
+        </div>
+        <div class="col-6">
+            <label for="sabor1"> Naranja</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <input type="checkbox" v-model="Platano"  value="sabor4">
+        </div>
+        <div class="col-6">
+            <label for="sabor1"> Platano</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <input type="checkbox"  v-model="Chessecake" value="sabor5">
+        </div>
+        <div class="col-6">
+            <label for="sabor1"> Chessecake</label>
+        </div>
+    </div>
+
+    <label for="sabor1">Adornos del pastel:</label>
+    <div class="row">
+            <div class="col-6">
+                <input type="checkbox" v-model="Galletas" value="sabor1">
+            </div>
+            <div class="col-6">
+                <label for="sabor1"> Galletas</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="checkbox"  v-model="Gomitas" value="sabor2">
+            </div>
+            <div class="col-6">
+                <label for="sabor1"> Gomitas</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="checkbox" v-model="Gelatina"  value="sabor3">
+            </div>
+            <div class="col-6">
+                <label for="sabor1"> Gelatina</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="checkbox"  v-model="Frutas" value="sabor4">
+            </div>
+            <div class="col-6">
+                <label for="sabor1"> Frutas</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <input type="checkbox" v-model="Sneakers" value="sabor5">
+            </div>
+            <div class="col-6">
+                <label for="sabor1"> Sneakers</label>
+            </div>
+        </div>
+        <br>
+
+
+
     <label for="fname">Nombre del solicitante:</label>
     <br>
-    <input type="text" id="fname" name="fname">
+    <input type="text" v-model="nombreS">
     <br>
     <label for="quantity">Telefono:</label>
     <br>
-    <input type="number" id="quantity" name="quantity" min="1" max="5">
+    <input type="number" v-model="telefonoS" min="1" max="5">
     <br>
     <label for="email">Correo electronico:</label>
     <br>
-    <input type="email" id="email" name="email">
+    <input type="email" v-model="correoS">
     <br>
+    <button @click="$store.dispatch('realizarPedido',{Chocolate, Fresa, Naranja, Platano, Chessecake,Galletas, Gomitas,Gelatina,Frutas,Sneakers,nombreS,correoS,telefonoS})">Realizar pedido</button>
     
 </template>
 

@@ -31,7 +31,6 @@ export default createStore({
       else{
         state.existenciasA[sabor-5]['cantidad']++;
       }
-      
     },
     bajarContador(state,sabor){
       if (sabor <=4){
@@ -40,18 +39,45 @@ export default createStore({
       else{
         state.existenciasA[sabor-5]['cantidad']--;
       }
+    },
+    realizarPedidoa(state,inf){
+      let descr="Sabor ";
+      let descr2= " con adornos de ";
+      let i=0;
+      for (const property in inf) {
+        console.log(`${property}: ${inf[property]}`);
+        if(i<10){
+          if(i<=4){
+            if(inf[property]!=undefined){
+              descr+=" "+property;
+            }
+          }
+          else{
+            if(inf[property]!=undefined){
+              descr2+=" "+property;
+            }
+          }
+        }
+        i++;
+      }
+      state.pedidos.push({id:state.pedidos.lengt +1,descripcion: descr+descr2,nombre:inf['nombreS'], telefono:inf['telefonoS'], correo:inf['correoS']})
+     // state.pedidos.push({id:state.pedidos.lengt +1,descripcion:"Sabor: "+ inf['schoco'] +inf['sfresa']+inf['sleches']+inf['splatano']+inf['schesse']+ "Con adornos "+inf['afrutos']+inf['agalletas']+inf['agelatina']+inf['agomitas']+inf['amym'],nombre:inf['nombreS'], telefono:inf['telefonoS'], correo:inf['correoS']})
     }
   },
   actions: {
     subirContador({commit},payload) { 
       commit("subirContador",payload.id);
       console.log(payload.id);
-
     },
     bajarContador({commit},payload) { 
       commit("bajarContador",payload.id);
       console.log(payload.id);
     },
+    realizarPedido({commit},tipo){
+      console.log("realizo pedido");
+      console.log(tipo);
+      commit("realizarPedidoa",tipo);
+    }
   },
   modules: {
   }
