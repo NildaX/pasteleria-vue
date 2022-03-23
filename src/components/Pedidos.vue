@@ -10,30 +10,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Sabor Chocolate con Fresa con adornos de galletas y gomitas</td>
-                <td>Raúl R</td>
-                <td>111 222 33 44</td>
-                <td>raulr@prueba.com</td>
-            </tr>
-            <tr>
-                <td>Sabor Tres leches con adornos de Chocolate</td>
-                <td>Lizbeth X</td>
-                <td>555 666 77 88</td>
-                <td>lizbethx@prueba.com</td>
-            </tr>
-            <tr>
-                <td>Sabor Platano con Chocolate Sin adornos</td>
-                <td>María Antonia T</td>
-                <td>999 101 01 12</td>
-                <td>mariat@prueba.com</td>
-            </tr>
-            <tr>
-                <td>Sabor Chessecake con adornos de Frutos rojos</td>
-                <td>Gabino X</td>
-                <td>131 314 14 15</td>
-                <td>gabinox@prueba.com</td>
-            </tr>
+                <tr v-for="item in $store.state.pedidos" :key="item.id">
+                  <td> {{ item. descripcion}} </td>
+                  <td> {{ item. nombre}} </td>
+                  <td> {{ item. telefono}} </td>
+                  <td> {{ item. correo}}</td>
+                </tr>
+           
         </tbody>
     </table>
     </div>
