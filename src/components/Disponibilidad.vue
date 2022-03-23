@@ -11,36 +11,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Chocolate</td>
-                            <td>{{ $store.state.sabores[0] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','chocolate')">-</button>
-                            <button @click="$store.dispatch('subirContador','chocolate')">+</button></td>
-
-                        </tr>
-                        <tr>
-                            <td>Fresa</td>
-                            <td>{{ $store.state.sabores[1] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','fresa')">-</button>
-                            <button @click="$store.dispatch('subirContador','fresa')">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>Tres leches</td>
-                            <td>{{ $store.state.sabores[2] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','leches')">-</button>
-                            <button @click="$store.dispatch('subirContador','leches')">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>Platano</td>
-                            <td>{{ $store.state.sabores[3] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','platano')">-</button>
-                            <button @click="$store.dispatch('subirContador','platano')">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>Chessecake</td>
-                            <td>{{ $store.state.sabores[4] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','chessecake')">-</button>
-                            <button @click="$store.dispatch('subirContador','chessecake')">+</button></td>
+                        <tr v-for="item in $store.state.existenciasP" :key="item.id">
+                          <td> {{ item. nombre}} </td>
+                          <td> {{ item. cantidad}} </td>
+                          <td> <button @click="$store.dispatch('bajarContador', { id: item.id })">-</button>
+                              <button @click="$store.dispatch('subirContador', { id: item.id })">+</button>
+                          </td>
                         </tr>
                     </tbody>
                 </table>
@@ -56,35 +32,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Galletas</td>
-                            <td>{{ $store.state.adornos[0] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','galletas')">-</button>
-                            <button @click="$store.dispatch('subirContador','galletas')">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>Gomitas</td>
-                            <td>{{ $store.state.adornos[1] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','gomitas')">-</button>
-                            <button @click="$store.dispatch('subirContador','gomitas')">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>Gelatina</td>
-                            <td>{{ $store.state.adornos[2] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','gelatina')">-</button>
-                            <button @click="$store.dispatch('subirContador','gelatina')">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>Frutos rojos</td>
-                            <td>{{ $store.state.adornos[3] }}</td>
-                            <td><button @click="$store.dispatch('bajarContador','frutos')">-</button>
-                            <button @click="$store.dispatch('subirContador','frutos')">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>Chocolate</td>
-                            <td>{{ $store.state.adornos[4]}}</td>
-                            <td><button @click="$store.dispatch('bajarContador','achocolate')">-</button>
-                            <button @click="$store.dispatch('subirContador','achocolate')">+</button></td>
+                        <tr v-for="item in $store.state.existenciasA" :key="item.id">
+                          <td> {{ item. nombre}} </td>
+                          <td> {{ item. cantidad}} </td>
+                          <td> <button @click="$store.dispatch('bajarContador', { id: item.id })">-</button>
+                              <button @click="$store.dispatch('subirContador', { id: item.id })">+</button>
+                          </td>
                         </tr>
                     </tbody>
                 </table>
