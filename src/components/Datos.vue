@@ -1,4 +1,5 @@
 <template>
+<form>
     <label for="sabor1">Realizar pedido</label>
     <br>
     <label for="sabor1">Sabor del pastel:</label>
@@ -88,20 +89,22 @@
 
 
 
-    <label for="fname">Nombre del solicitante:</label>
+    <label for="fname" >Nombre del solicitante:</label>
     <br>
-    <input type="text" v-model="nombreS">
+    <input type="text" v-model="nombreS" required>
     <br>
     <label for="quantity">Telefono:</label>
     <br>
-    <input type="number" v-model="telefonoS" min="1" max="5">
+    <input type="number" v-model="telefonoS" min="1" max="5" required>
     <br>
     <label for="email">Correo electronico:</label>
     <br>
-    <input type="email" v-model="correoS">
+    <input type="email" v-model="correoS" required>
     <br>
-    <button @click="$store.dispatch('realizarPedido',{Chocolate, Fresa, Naranja, Platano, Chessecake,Galletas, Gomitas,Gelatina,Frutas,Sneakers,nombreS,correoS,telefonoS})">Realizar pedido</button>
-    
+    {{ $store.state.estadoenvio }}
+    <br>
+    <button type="reset" @click="$store.dispatch('realizarPedido',{Chocolate, Fresa, Naranja, Platano, Chessecake,Galletas, Gomitas,Gelatina,Frutas,Sneakers,nombreS,correoS,telefonoS})">Realizar pedido</button>
+    </form>
 </template>
 
 <script>
@@ -109,3 +112,13 @@ export default{
     name: 'Datos',
 }
 </script>
+<style scoped>
+button{
+    font-size: 30px;
+    border: 2px;
+    background: #fc67b1;
+    padding: 0;
+    width: 100%;
+    height: 5%;
+  }
+  </style>

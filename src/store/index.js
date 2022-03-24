@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    estadoenvio: " ",
     existenciasP:[
       {id:0,nombre:"Chocolate",cantidad:"0"},
       {id:1,nombre:"Fresa",cantidad:"0"},
@@ -62,6 +63,7 @@ export default createStore({
       }
       state.pedidos.push({id:state.pedidos.lengt +1,descripcion: descr+descr2,nombre:inf['nombreS'], telefono:inf['telefonoS'], correo:inf['correoS']})
      // state.pedidos.push({id:state.pedidos.lengt +1,descripcion:"Sabor: "+ inf['schoco'] +inf['sfresa']+inf['sleches']+inf['splatano']+inf['schesse']+ "Con adornos "+inf['afrutos']+inf['agalletas']+inf['agelatina']+inf['agomitas']+inf['amym'],nombre:inf['nombreS'], telefono:inf['telefonoS'], correo:inf['correoS']})
+     state.estadoenvio="SE REALIZO EL ENVIO";
     }
   },
   actions: {
